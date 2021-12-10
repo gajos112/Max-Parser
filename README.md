@@ -22,7 +22,7 @@ First it will check if the file indeed exists:
 if (File.Exists(textBoxPathToMaxFile.Text)) if (File.Exists(textBoxPathToMaxFile.Text))
 ```
 
-If the file exists, it reads all bytes frome the file to an array:
+If the file exists, it reads all bytes from the file to an array:
 ```
 byte[] ByteContentOfMax = System.IO.File.ReadAllBytes(pathToMax);
 string ContentOfMax = BitConverter.ToString(ByteContentOfMax);
@@ -85,12 +85,12 @@ First you have to parse the $MFT in order to get the $MFT entry number for "$Ext
 
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/4.PNG?raw=true)
 
-Then I took that number and used Eric Zimmeman's tool https://f001.backblazeb2.com/file/EricZimmermanTools/MFTECmd.zip with extra argument "--de" to "dump full details for entry/sequence #". Doing that I found "Resident Data" for that entry.
+Then I took that number and used Eric Zimmerman's tool https://f001.backblazeb2.com/file/EricZimmermanTools/MFTECmd.zip with extra argument "--de" to "dump full details for entry/sequence #". Doing that I found "Resident Data" for that entry.
 
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/5.PNG?raw=true)
 
 After that I had to take that data and put to the text box called "Bytes to parse" and click "File" -> "Parse the input". 
 
-In result I got the same inforamtion, which I got parsing the file.
+In result I got the same information, which I got parsing the file.
 
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/6.png?raw=true)
