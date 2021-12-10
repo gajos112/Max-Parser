@@ -11,9 +11,10 @@ Like my other tools, it is a GUI tool written in C# .Net Framework 4.7.2. It was
 
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/1.png?raw=true)
 
-There are two ways to use that tool. The first option allows you to parse $Max file based on the path you have to provide. 
+There are two ways to use that tool. The first option allows you to parse $Max file based on the path you provided. 
 
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/2.png?raw=true)
+
 
 Once the path is provided you have to click "Parse the file...". First it will check if the file indeed exists:
 ```
