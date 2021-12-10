@@ -51,7 +51,8 @@ When we have first 8 bytes, we how to reverse the order of bytes.
     Array.Reverse(ByteUsnJrnlSize);
 ```
 
-Now we can convert the hex value to decimal. 
+
+Now we can convert hexadecimal to decimal value.
 ```
     string StringReverseUsnJrnlSize = BitConverter.ToString(ByteUsnJrnlSize);
     long decValue = long.Parse(StringReverseUsnJrnlSize.Replace("-", ""), System.Globalization.NumberStyles.HexNumber);
