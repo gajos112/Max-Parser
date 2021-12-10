@@ -48,7 +48,8 @@ else
     }
 ```
 
-To understand why we need first 8 bytes, we have to know the structure of that file, which is explained in this presentation: http://forensicinsight.org/wp-content/uploads/2013/07/F-INSIGHT-Advanced-UsnJrnl-Forensics-English.pdf. 
+To understand why we need first 8 bytes, we have to know the structure of that file, which is explained in this presentation: http://forensicinsight.org/wp-content/uploads/2013/07/F-INSIGHT-Advanced-UsnJrnl-Forensics-English.pdf.
+
 Quick overview can be found below.
 
 - Offset: 0x00, size: 8 bytes -> Maximum Size The maximum size of log data
