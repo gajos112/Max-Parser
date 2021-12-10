@@ -38,19 +38,27 @@ else
 ```
 
 
-To understand wh we need first 8 bytes, we have to know the structure of that file, which is explained on this blog: http://forensicinsight.org/wp-content/uploads/2013/07/F-INSIGHT-Advanced-UsnJrnl-Forensics-English.pdf. Quick overview can be found below.
+To understand wh we need first 8 bytes, we have to know the structure of that file, which is explained on this blog: http://forensicinsight.org/wp-content/uploads/2013/07/F-INSIGHT-Advanced-UsnJrnl-Forensics-English.pdf. 
+Quick overview can be found below.
 
 - Offset: 0x00, size: 8 bytes -> Maximum Size The maximum size of log data
 - Offset: 0x08, size: 8 Allocation Size The size of allocated area when new log data is saved.
 - Offset: 0x10, size: 8 USN ID The creation time of "$UsnJrnl" file(FILETIME)
 - Offset: 0x18, size: 8 Lowest Valid USN The least value of USN in current records With this value, investigator can approach the start point of first record within "$J" attribute
 
+When we have first 8 bytes, we how to reverse the order of bytes.
+```
     Array.Reverse(ByteUsnJrnlSize);
+```
+
+Now we can convert the hex value to decimal. 
+```
     string StringReverseUsnJrnlSize = BitConverter.ToString(ByteUsnJrnlSize);
     long decValue = long.Parse(StringReverseUsnJrnlSize.Replace("-", ""), System.Globalization.NumberStyles.HexNumber);
+```
 
-    textBoxContent.Text = ContentOfMax.Replace('-', ' ');
+The size is stored in bytes, thefore I created two small functions that convert it to MB and GB.
+```
     textBoxMaxSizeMB.Text = GetMBfromBytes(decValue) + " MB";
     textBoxMaxSizeGB.Text = GetGBfromBytes(decValue) + " GB";
-}
 ```
