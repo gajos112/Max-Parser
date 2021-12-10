@@ -29,7 +29,7 @@ string ContentOfMax = BitConverter.ToString(ByteContentOfMax);
 ```
 
 Then it checks the lenght of the array, why? Becuase $Max is 32 bytes long.
-![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/7.png?raw=true)
+![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/7.PNG?raw=true)
 ```
 if (ByteContentOfMax.Length != 32)
 {
@@ -82,11 +82,11 @@ But as it was said, there are two options to get the maximum size of the $UsnJrn
 
 First you have to parse the $MFT, in order to get the $MFT entry number for "$Extend\$UsnJrnl:$Max". In the screenshot below, you can see that for my example it was 86407.
 
-![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/4.png?raw=true)
+![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/4.PNG?raw=true)
 
 Then I took that number and used Eric Zimmeman's tool https://f001.backblazeb2.com/file/EricZimmermanTools/MFTECmd.zip with extra argument "--de" to "dump full details for entry/sequence #". Doing that I found "Resident Data" for that entry.
 
-![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/5.png?raw=true)
+![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/5.PNG?raw=true)
 
 After that I had to take that data and put to the text box called "Bytes to parse" and click "File" -> "Parse the input". 
 
