@@ -16,11 +16,6 @@ namespace _Max_ParserGUI
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         static float GetMBfromBytes(long bytes)
         {
             return (float)bytes / 1024 / 1024;
@@ -31,16 +26,7 @@ namespace _Max_ParserGUI
             return (float)bytes / 1024 / 1024 / 1024;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-        
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
+       
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
