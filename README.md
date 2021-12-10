@@ -52,10 +52,10 @@ To understand why we need first 8 bytes, we have to know the structure of that f
 
 Quick overview can be found below.
 
-- Offset: 0x00, size: 8 bytes -> Maximum Size The maximum size of log data
-- Offset: 0x08, size: 8 Allocation Size The size of allocated area when new log data is saved.
-- Offset: 0x10, size: 8 USN ID The creation time of "$UsnJrnl" file(FILETIME)
-- Offset: 0x18, size: 8 Lowest Valid USN The least value of USN in current records With this value, investigator can approach the start point of first record within "$J" attribute
+- Offset: 0x00, size: 8 bytes -> Maximum Size (The maximum size of log data),
+- Offset: 0x08, size: 8 bytes -> Allocation Size (The size of allocated area when new log data is saved),
+- Offset: 0x10, size: 8 bytes -> USN ID (The creation time of "$UsnJrnl" file(FILETIME)),
+- Offset: 0x18, size: 8 bytes -> Lowest Valid USN (The least value of USN in current records With this value, investigator can approach the start point of first record within "$J" attribute).
 
 When we have first 8 bytes, we have to reverse the order of bytes.
 ```
@@ -79,9 +79,9 @@ The size is stored in bytes, therefore I created two small functions that conver
 In results you will get the size of the $UsnJrnl, you can see it in the screenshot below:
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/3.png?raw=true)
 
-But as it was said, there are two options to get the maximum size of the $UsnJrnl. The second option let you parse the content of the $Max file, without actually having that file. It can be useful if $Max file was not a part of your collection, but you still have a $MFT. The content of the $Max is small enough to be residual data inside the $MFT.
+But as it was said, there are two options to get the maximum size of the $UsnJrnl. The second option lets you parse the content of the $Max file, without actually having that file. It can be useful if $Max file was not a part of your collection, but you still have $MFT. The content of the $Max is small enough to be residual data inside the $MFT.
 
-First you have to parse the $MFT, in order to get the $MFT entry number for "$Extend\$UsnJrnl:$Max". In the screenshot below, you can see that for my example it was 86407.
+First you have to parse the $MFT in order to get the $MFT entry number for "$Extend\$UsnJrnl:$Max". In the screenshot below you can see that for my example it was 86407.
 
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/4.PNG?raw=true)
 
@@ -91,6 +91,6 @@ Then I took that number and used Eric Zimmeman's tool https://f001.backblazeb2.c
 
 After that I had to take that data and put to the text box called "Bytes to parse" and click "File" -> "Parse the input". 
 
-In result I got the same inforamtion which I got parsing the file.
+In result I got the same inforamtion, which I got parsing the file.
 
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/6.png?raw=true)
