@@ -2,7 +2,7 @@
 
 $Max-Parser was designed and created for all DFIR analysts who want to check the maximum size of the $UsnJrnl. That information can be retrived from $Max file.
 
-Like m other tools, it is a GUI tool written in C# .Net Framework 4.7.2. It was tested on:
+Like my other tools, it is a GUI tool written in C# .Net Framework 4.7.2. It was tested on:
 
 - Windows 10.0.16299,
 - Windows 10.0.19042.
