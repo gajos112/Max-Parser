@@ -85,7 +85,7 @@ First you have to parse the $MFT in order to get the $MFT entry number for "$Ext
 
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/4.PNG?raw=true)
 
-Then I took that number and used Eric Zimmerman's tool https://f001.backblazeb2.com/file/EricZimmermanTools/MFTECmd.zip with extra argument "--de" to "dump full details for entry/sequence #". Doing that I found "Resident Data" for that entry.
+Then I took that number and used the Eric Zimmerman's tool https://f001.backblazeb2.com/file/EricZimmermanTools/MFTECmd.zip with extra argument "--de" to "dump full details for entry/sequence #". Doing that I found "Resident Data" for that entry.
 
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/5.PNG?raw=true)
 
