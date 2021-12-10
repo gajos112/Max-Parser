@@ -75,12 +75,13 @@ The size is stored in bytes, therefore I created two small functions that conver
     textBoxMaxSizeGB.Text = GetGBfromBytes(decValue) + " GB";
 ```
 
-In results you will get the size of the $UsnJrnl, what you can see in the screenshot below:
+In results you will get the size of the $UsnJrnl, you can see it in the screenshot below:
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/3.png?raw=true)
 
 But as it was said, there are two options to get the maximum size of the $UsnJrnl. The second option let you parse the content of the $Max file, without actually having that file. It can be useful if $Max file was not a part of your collection, but you still have a $MFT. The content of the $Max is small enough to be residual data inside the $MFT.
 
-First you have to parse the $MFT, in order to get the $MFT entry number for "$Extend\$UsnJrnl:$Max". In the screenshot below you can see that for my example it was 86407.
+First you have to parse the $MFT, in order to get the $MFT entry number for "$Extend\$UsnJrnl:$Max". In the screenshot below, you can see that for my example it was 86407.
+
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/4.png?raw=true)
 
 Then I took that number and used Eric Zimmeman's tool https://f001.backblazeb2.com/file/EricZimmermanTools/MFTECmd.zip with extra argument "--de" to "dump full details for entry/sequence #". Doing that I found "Resident Data" for that entry.
