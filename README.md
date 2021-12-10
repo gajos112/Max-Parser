@@ -84,9 +84,11 @@ First you have to parse the $MFT, in order to get the $MFT entry number for "$Ex
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/4.png?raw=true)
 
 Then I took that number and used Eric Zimmeman's tool https://f001.backblazeb2.com/file/EricZimmermanTools/MFTECmd.zip with extra argument "--de" to "dump full details for entry/sequence #". Doing that I found "Resident Data" for that entry.
+
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/5.png?raw=true)
 
 After that I had to take that data and put to the text box called "Bytes to parse" and click "File" -> "Parse the input". 
 
 In result I got the same inforamtion which I got parsing the file.
+
 ![alt text](https://github.com/gajos112/Max-Parser/blob/main/Images/6.png?raw=true)
